@@ -12,7 +12,6 @@ INTEGRANTES DO GRUPO
 ========================================
 
 1. Milene dos Santos Caldeira - RA: [número]
-2. [Nome Completo] - RA: [número]
 
 ========================================
 COMO EXECUTAR
