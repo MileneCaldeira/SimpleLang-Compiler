@@ -1,0 +1,418 @@
+========================================
+DOCUMENTAÇÃO SIMPLELANG
+========================================
+
+LINGUAGEM: SimpleLang
+DATA: Novembro 2025
+========================================
+1. INTRODUÇÃO
+========================================
+
+SimpleLang é uma linguagem de programação simples e
+educacional, inspirada em C/Java, criada para o trabalho
+de Teoria da Computação e Compiladores.
+
+========================================
+2. TIPOS DE DADOS
+========================================
+
+A linguagem possui 3 tipos primitivos:
+
+INT (Inteiro)
+-------------
+Armazena números inteiros positivos ou negativos.
+Exemplos: 0, 10, -5, 1000
+
+FLOAT (Decimal)
+---------------
+Armazena números com casas decimais.
+Usa ponto (.) como separador decimal.
+Exemplos: 3.14, -2.5, 0.0, 10.5
+
+STRING (Texto)
+--------------
+Armazena texto entre aspas duplas.
+Exemplos: "Olá", "Maria Silva", "123"
+
+========================================
+3. DECLARAÇÃO DE VARIÁVEIS
+========================================
+
+SINTAXE:
+tipo identificador;
+tipo identificador = valor;
+
+EXEMPLOS:
+int idade;
+float altura = 1.75;
+string nome = "João";
+
+REGRAS:
+- Identificador deve começar com letra ou _
+- Pode conter letras, números e _
+- Case-sensitive (idade ≠ Idade)
+- Não pode usar palavras reservadas
+
+========================================
+4. ATRIBUIÇÃO
+========================================
+
+SINTAXE:
+identificador = expressão;
+
+EXEMPLOS:
+x = 10;
+media = (nota1 + nota2) / 2.0;
+nome = "Maria";
+
+REGRAS:
+- Variável deve estar declarada
+- Tipo da expressão deve ser compatível
+- int pode ser atribuído a float (promoção)
+- float não pode ser atribuído a int
+
+========================================
+5. OPERADORES
+========================================
+
+ARITMÉTICOS:
++   Adição
+-   Subtração
+*   Multiplicação
+/   Divisão
+%   Módulo (resto da divisão)
+
+PRECEDÊNCIA (maior → menor):
+1. * / %
+2. + -
+
+EXEMPLOS:
+10 + 5 * 2    → 20 (não 30)
+(10 + 5) * 2  → 30
+
+RELACIONAIS:
+==  Igual
+!=  Diferente
+<   Menor
+>   Maior
+<=  Menor ou igual
+>=  Maior ou igual
+
+LÓGICOS:
+&&  E lógico (AND)
+||  OU lógico (OR)
+!   NÃO lógico (NOT)
+
+========================================
+6. ESTRUTURA CONDICIONAL
+========================================
+
+IF-ELSE:
+--------
+if (condição) {
+    // comandos se verdadeiro
+} else {
+    // comandos se falso
+}
+
+O else é opcional.
+
+EXEMPLOS:
+
+if (idade >= 18) {
+    print("Maior de idade");
+}
+
+if (nota >= 7.0) {
+    print("Aprovado");
+} else {
+    print("Reprovado");
+}
+
+if (x > 0 && x < 10) {
+    print("Entre 0 e 10");
+}
+
+========================================
+7. ESTRUTURAS DE REPETIÇÃO
+========================================
+
+WHILE:
+------
+while (condição) {
+    // comandos
+}
+
+Executa enquanto condição for verdadeira.
+Testa ANTES de executar.
+
+EXEMPLO:
+int i;
+i = 1;
+while (i <= 5) {
+    print(i);
+    i = i + 1;
+}
+
+DO-WHILE:
+---------
+do {
+    // comandos
+} while (condição);
+
+Executa pelo menos uma vez.
+Testa DEPOIS de executar.
+
+EXEMPLO:
+int i;
+i = 1;
+do {
+    print(i);
+    i = i + 1;
+} while (i <= 5);
+
+FOR:
+----
+for (inicialização; condição; incremento) {
+    // comandos
+}
+
+Loop com contador.
+
+EXEMPLO:
+for (int i = 1; i <= 10; i = i + 1) {
+    print(i);
+}
+
+========================================
+8. ENTRADA E SAÍDA
+========================================
+
+PRINT (Impressão):
+------------------
+print(expressão);
+
+Imprime na tela e pula linha.
+
+EXEMPLOS:
+print("Olá Mundo");
+print(idade);
+print(10 + 5);
+
+SCAN (Leitura):
+---------------
+scan(variável);
+
+Lê do teclado para a variável.
+
+EXEMPLOS:
+int numero;
+scan(numero);
+
+string nome;
+scan(nome);
+
+IMPORTANTE:
+- Variável deve estar declarada
+- Tipo da leitura depende do tipo da variável
+
+========================================
+9. COMENTÁRIOS
+========================================
+
+LINHA ÚNICA:
+// Este é um comentário
+
+MÚLTIPLAS LINHAS:
+/*
+   Este é um
+   comentário de
+   múltiplas linhas
+*/
+
+========================================
+10. ESCOPO DE VARIÁVEIS
+========================================
+
+Variáveis declaradas dentro de blocos { }
+são locais a esse bloco.
+
+EXEMPLO:
+int x = 10;
+
+if (x > 5) {
+    int y = 20;  // y existe apenas aqui
+    print(y);
+}
+
+// y não existe aqui
+print(x);  // x ainda existe
+
+========================================
+11. CONVERSÃO DE TIPOS
+========================================
+
+AUTOMÁTICA (Promoção):
+int → float (permitido)
+
+EXEMPLO:
+int a = 10;
+float b;
+b = a;  // OK, b = 10.0
+
+NÃO PERMITIDO:
+float → int (perde precisão)
+string → int ou float
+int/float → string
+
+========================================
+12. EXEMPLOS COMPLETOS
+========================================
+
+EXEMPLO 1: Calculadora
+----------------------
+int a;
+int b;
+int soma;
+
+print("Digite o primeiro número:");
+scan(a);
+
+print("Digite o segundo número:");
+scan(b);
+
+soma = a + b;
+print("Resultado:");
+print(soma);
+
+EXEMPLO 2: Par ou Ímpar
+------------------------
+int num;
+print("Digite um número:");
+scan(num);
+
+if (num % 2 == 0) {
+    print("Par");
+} else {
+    print("Ímpar");
+}
+
+EXEMPLO 3: Tabuada
+------------------
+int numero;
+print("Digite um número:");
+scan(numero);
+
+for (int i = 1; i <= 10; i = i + 1) {
+    int resultado;
+    resultado = numero * i;
+    print(resultado);
+}
+
+EXEMPLO 4: Fatorial
+-------------------
+int n;
+int fatorial;
+
+print("Digite um número:");
+scan(n);
+
+fatorial = 1;
+int i;
+i = 1;
+
+while (i <= n) {
+    fatorial = fatorial * i;
+    i = i + 1;
+}
+
+print("Fatorial:");
+print(fatorial);
+
+========================================
+13. MENSAGENS DE ERRO
+========================================
+
+O compilador detecta e reporta:
+
+1. Tokens inválidos
+   "Token inválido '@' na linha X, coluna Y"
+
+2. Variável não declarada
+   "Variável 'x' não declarada na linha X"
+
+3. Declaração duplicada
+   "Variável 'x' já declarada no escopo atual"
+
+4. Tipo incompatível
+   "Tipo incompatível na atribuição da variável 'x'"
+
+5. Erro de sintaxe
+   "Erro de sintaxe na linha X: esperado ';'"
+
+========================================
+14. LIMITAÇÕES
+========================================
+
+SimpleLang NÃO suporta:
+- Arrays/Vetores
+- Funções definidas pelo usuário
+- Structs/Classes
+- Ponteiros
+- Operadores ++ e --
+- Concatenação de strings com +
+- Break e continue em loops
+- Switch-case
+
+========================================
+15. PALAVRAS RESERVADAS
+========================================
+
+int, float, string
+if, else
+while, do, for
+print, scan
+
+Não podem ser usadas como identificadores.
+
+========================================
+16. BOAS PRÁTICAS
+========================================
+
+1. Use nomes descritivos para variáveis
+   ✓ idade, altura, nome
+   ✗ x, y, a
+
+2. Indente seu código corretamente
+3. Use comentários para explicar lógica
+4. Declare variáveis próximo ao uso
+5. Evite variáveis globais desnecessárias
+6. Teste expressões complexas com parênteses
+
+========================================
+17. CONVERSÃO PARA JAVA
+========================================
+
+O compilador gera código Java equivalente:
+
+SimpleLang:
+-----------
+int x;
+x = 10;
+print(x);
+
+Java Gerado:
+------------
+import java.util.Scanner;
+
+public class GeneratedCode {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int x;
+        x = 10;
+        System.out.println(x);
+        scanner.close();
+    }
+}
+
+========================================

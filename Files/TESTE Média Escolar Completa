@@ -1,0 +1,84 @@
+// Sistema de Média Escolar com Aprovação
+
+string nomeAluno;
+float nota1;
+float nota2;
+float nota3;
+float nota4;
+float media;
+float mediaAprovacao;
+
+print("========================================");
+print("   SISTEMA DE CALCULO DE MEDIA ESCOLAR");
+print("========================================");
+print("");
+
+print("Digite o nome do aluno:");
+scan(nomeAluno);
+
+print("");
+print("Digite a nota do 1o bimestre:");
+scan(nota1);
+
+print("Digite a nota do 2o bimestre:");
+scan(nota2);
+
+print("Digite a nota do 3o bimestre:");
+scan(nota3);
+
+print("Digite a nota do 4o bimestre:");
+scan(nota4);
+
+print("");
+print("Digite a media minima para aprovacao:");
+scan(mediaAprovacao);
+
+// Calcular média
+media = (nota1 + nota2 + nota3 + nota4) / 4.0;
+
+print("");
+print("========================================");
+print("           BOLETIM ESCOLAR");
+print("========================================");
+print("");
+
+print("Aluno:");
+print(nomeAluno);
+
+print("");
+print("Notas:");
+print(nota1);
+print(nota2);
+print(nota3);
+print(nota4);
+
+print("");
+print("Media Final:");
+print(media);
+
+print("");
+print("========================================");
+
+// Verificar situação
+if (media >= mediaAprovacao) {
+    print("         SITUACAO: APROVADO!");
+    print("========================================");
+    print("");
+    print("Parabens! Continue assim!");
+} else {
+    float falta;
+    falta = mediaAprovacao - media;
+    
+    print("         SITUACAO: REPROVADO");
+    print("========================================");
+    print("");
+    print("Faltaram pontos:");
+    print(falta);
+    print("");
+    print("Estude mais no proximo periodo!");
+}
+
+print("");
+print("========================================");
+print("            FIM DO BOLETIM");
+print("========================================");

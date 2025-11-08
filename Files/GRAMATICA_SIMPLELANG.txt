@@ -1,0 +1,112 @@
+========================================
+GRAMÁTICA FORMAL SIMPLELANG
+========================================
+
+NOTAÇÃO BNF (Backus-Naur Form)
+Implementação: Recursive Descent Parser
+
+========================================
+PRODUÇÕES
+========================================
+
+Program → Statement*
+
+Statement → Declaration 
+         | Assignment 
+         | IfStatement 
+         | WhileStatement 
+         | DoWhileStatement 
+         | ForStatement 
+         | PrintStatement 
+         | ScanStatement 
+         | Block
+
+Declaration → Type IDENTIFIER (ASSIGN Expression)? SEMICOLON
+
+Assignment → IDENTIFIER ASSIGN Expression SEMICOLON
+
+IfStatement → IF LPAREN Expression RPAREN Statement (ELSE Statement)?
+
+WhileStatement → WHILE LPAREN Expression RPAREN Statement
+
+DoWhileStatement → DO Statement WHILE LPAREN Expression RPAREN SEMICOLON
+
+ForStatement → FOR LPAREN (Declaration | Assignment) Expression SEMICOLON Assignment RPAREN Statement
+
+PrintStatement → PRINT LPAREN Expression RPAREN SEMICOLON
+
+ScanStatement → SCAN LPAREN IDENTIFIER RPAREN SEMICOLON
+
+Block → LBRACE Statement* RBRACE
+
+Expression → LogicalOr
+
+LogicalOr → LogicalAnd (OR LogicalAnd)*
+
+LogicalAnd → Equality (AND Equality)*
+
+Equality → Relational ((EQUALS | NOT_EQUALS) Relational)*
+
+Relational → Additive ((LESS | GREATER | LESS_EQUAL | GREATER_EQUAL) Additive)*
+
+Additive → Multiplicative ((PLUS | MINUS) Multiplicative)*
+
+Multiplicative → Unary ((MULTIPLY | DIVIDE | MODULO) Unary)*
+
+Unary → (MINUS | NOT) Unary | Primary
+
+Primary → NUMBER_INT 
+       | NUMBER_FLOAT 
+       | STRING_LITERAL 
+       | IDENTIFIER 
+       | LPAREN Expression RPAREN
+
+Type → INT | FLOAT | STRING
+
+========================================
+TOKENS (Análise Léxica)
+========================================
+
+KEYWORDS:
+int, float, string, if, else, while, do, for, print, scan
+
+OPERATORS:
++, -, *, /, %, =, ==, !=, <, >, <=, >=, &&, ||, !
+
+DELIMITERS:
+(, ), {, }, ;, ,
+
+LITERALS:
+NUMBER_INT: [0-9]+
+NUMBER_FLOAT: [0-9]+ '.' [0-9]+
+STRING_LITERAL: '"' [^"]* '"'
+
+IDENTIFIERS:
+[a-zA-Z_][a-zA-Z0-9_]*
+
+IGNORED:
+WhiteSpace, Tab, Newline, Comments
+
+========================================
+PRECEDÊNCIA (maior → menor)
+========================================
+
+1. ( )
+2. -, ! (unário)
+3. *, /, %
+4. +, -
+5. <, >, <=, >=
+6. ==, !=
+7. &&
+8. ||
+
+========================================
+CARACTERÍSTICAS
+========================================
+
+✓ Sem recursividade à esquerda
+✓ Sem produções vazias
+✓ LL(1) compatível
+✓ Precedência correta de operadores
+
+========================================
