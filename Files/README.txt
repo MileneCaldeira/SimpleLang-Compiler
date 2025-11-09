@@ -8,7 +8,7 @@ LINGUAGEM: SimpleLang
 IMPLEMENTAÇÃO: Java (sem ANTLR - implementação manual)
 
 ========================================
-INTEGRANTES DO GRUPO
+Desenvolvedora
 ========================================
 
 1. Milene dos Santos Caldeira - RA: [número]
