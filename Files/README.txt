@@ -43,9 +43,9 @@ CÓDIGO FONTE (7 arquivos):
 - CompilerGUI.java        → Interface gráfica (MAIN)
 
 ARQUIVOS DE TESTE (3 arquivos):
-- teste_correto.sl        → Programa válido completo
-- teste_com_erros.sl      → Testa detecção de erros
-- teste_avancado.sl       → Programa complexo (calculadora)
+- TESTE Média Escolar Completa.sl        → Programa válido completo
+- teste_com_erros.sl                     → Testa detecção de erros
+- teste_correto.sl                       → Programa complexo (calculadora)
 
 DOCUMENTAÇÃO:
 - README.txt              → Este arquivo
