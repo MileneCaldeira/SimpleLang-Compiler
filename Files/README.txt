@@ -45,7 +45,7 @@ CÓDIGO FONTE (7 arquivos):
 ARQUIVOS DE TESTE (3 arquivos):
 - TESTE Média Escolar Completa.sl        → Programa válido completo
 - teste_com_erros.sl                     → Testa detecção de erros
-- teste_correto.sl                       → Programa complexo (calculadora)
+- teste_correto.sl                       → Programa idade
 
 DOCUMENTAÇÃO:
 - README.txt              → Este arquivo
