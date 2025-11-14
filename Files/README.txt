@@ -12,7 +12,7 @@ Desenvolvedoras
 ========================================
 
 1. Milene dos Santos Caldeira - RA: 12525220432
-2. Livia Veloso Vieira - RA:
+2. Livia Veloso Vieira - RA: 12524123175
 
 ========================================
 COMO EXECUTAR
